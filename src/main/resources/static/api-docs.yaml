@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: Palindroom
+  description: Bepalen of een woord een palindroom is
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /woorden/{woord}/isPalindroom:
+    get:
+      tags:
+      - woord-controller
+      summary: het opgegeven woord is wel of niet een palindroom
+      operationId: isPalindroom
+      parameters:
+      - name: woord
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: boolean
+components: {}
